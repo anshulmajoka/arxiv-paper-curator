@@ -17,6 +17,18 @@ A comprehensive Jupyter notebook that guides students through:
    - Understanding how Docker containers communicate
    - Data persistence and volume management concepts
 
+<p align="center">
+  <img src="../../static/week1_infra_setup.png" alt="Week 1 Infrastructure Setup" width="700">
+</p>
+
+**Architecture Overview:**
+- **FastAPI** (Port 8000): REST API with async support and automatic documentation
+- **PostgreSQL 16** (Port 5432): Primary database for paper metadata and content storage
+- **OpenSearch 2.19** (Ports 9200, 5601): Hybrid search engine with management dashboards
+- **Apache Airflow 3.0** (Port 8080): Workflow orchestration with DAGs and PostgreSQL backend
+- **Ollama** (Port 11434): Local LLM server for future RAG implementation
+- **Docker Network**: All services communicate via `rag-network` with persistent volumes
+
 3. **Service-by-Service Setup**
    - PostgreSQL database for paper metadata storage
    - OpenSearch for full-text search capabilities
@@ -84,6 +96,13 @@ This material is designed for:
 - **Notebook completion**: 1 hours
 - **Total**: 2-4 hours
 
+## 📖 Additional Resources
+
+**Week 1 Blog Post:** [The Infrastructure That Powers RAG Systems](https://jamwithai.substack.com/p/the-infrastructure-that-powers-rag)
+- Deep dive into each infrastructure component
+- Production deployment considerations
+- Architecture decision explanations
+
 ## Support Resources
 
 If you encounter issues:
@@ -91,6 +110,7 @@ If you encounter issues:
 2. Review the common problems and solutions
 3. Ensure all prerequisites are properly installed
 4. Follow the step-by-step verification procedures
+5. Ask in Jam With AI substack chat channel
 
 ## Next Steps
 

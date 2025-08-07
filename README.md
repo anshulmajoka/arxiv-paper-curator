@@ -87,8 +87,21 @@ uv run jupyter notebook notebooks/week1/week1_setup.ipynb
 - Service orchestration and health monitoring
 - Professional development environment with code quality tools
 
+### **🏗️ Week 1 Infrastructure Architecture**
+
+<p align="center">
+  <img src="static/week1_infra_setup.png" alt="Week 1 Infrastructure Setup" width="800">
+</p>
+
+**Week 1 Infrastructure Components:**
+- **FastAPI**: REST endpoints with async support (Port 8000)  
+- **PostgreSQL 16**: Paper metadata storage (Port 5432)
+- **OpenSearch 2.19**: Search engine with dashboards (Ports 9200, 5601)
+- **Apache Airflow 3.0**: Workflow orchestration (Port 8080)
+- **Ollama**: Local LLM server (Port 11434)
+
 ### **📖 Week 1 Blog Post**
-*Coming soon!* Detailed walkthrough and production insights.
+[The Infrastructure That Powers RAG Systems](https://jamwithai.substack.com/p/the-infrastructure-that-powers-rag) - Detailed walkthrough and production insights.
 
 ---
 
@@ -236,7 +249,8 @@ Complete when you can:
   <h3>🎉 Ready to Start Your AI Engineering Journey?</h3>
   <p><strong>Begin with the Week 1 setup notebook and build your first production RAG system!</strong></p>
   
-  <p><em>Built with ❤️ for learners who want to master modern AI engineering</em></p>
+  <p><em>For learners who want to master modern AI engineering</em></p>
+  <p><strong>Built with love by Jam With AI</strong></p>
 </div>
 
 ---
