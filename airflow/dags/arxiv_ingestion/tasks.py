@@ -61,8 +61,8 @@ async def run_paper_ingestion_pipeline(
     with database.get_session() as session:
         return await metadata_fetcher.fetch_and_process_papers(
             max_results=max_results,
-            from_date=target_date,
-            to_date=target_date,
+            from_date='20250808',
+            to_date='20250808',
             process_pdfs=process_pdfs,
             store_to_db=True,
             db_session=session,
@@ -117,7 +117,7 @@ def fetch_daily_papers(**context):
         results = asyncio.run(
             run_paper_ingestion_pipeline(
                 target_date=target_date,
-                max_results=10,
+                max_results=2,
                 process_pdfs=True,
             )
         )

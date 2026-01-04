@@ -94,6 +94,7 @@ services:
       - airflow_logs:/opt/airflow/logs
       - ./airflow/plugins:/opt/airflow/plugins
       - ./src:/opt/airflow/src
+      - ./data:/opt/airflow/data
     ports:
       - "8080:8080"
     # Command handled by entrypoint.sh
@@ -154,4 +155,4 @@ volumes:
 
 networks:
   rag-network:
-    driver: bridge 
+    driver: bridge
