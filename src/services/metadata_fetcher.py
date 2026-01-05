@@ -388,22 +388,17 @@ class MetadataFetcher:
                 stored_paper = paper_repo.upsert(paper_create)
 
                 if stored_paper:
+                    # Commit immediately to isolate failures
+                    db_session.commit()
                     stored_count += 1
                     content_info = "with parsed content" if parsed_paper else "metadata only"
                     logger.debug(f"Stored paper {paper.arxiv_id} to database ({content_info})")
 
             except Exception as e:
                 logger.error(f"Failed to store paper {paper.arxiv_id}: {e}")
+                db_session.rollback() # Rollback only this transaction
 
-        # Commit all changes
-        try:
-            db_session.commit()
-            logger.info(f"Committed {stored_count} papers to database with full content storage")
-        except Exception as e:
-            logger.error(f"Failed to commit papers to database: {e}")
-            db_session.rollback()
-            stored_count = 0
-
+        logger.info(f"Committed {stored_count} papers to database with full content storage")
         return stored_count
 
     def _index_papers_to_opensearch(
