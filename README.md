@@ -1,561 +1,216 @@
-# The Mother of AI Project
-## Phase 1 RAG Systems: arXiv Paper Curator
-
-<div align="center">
-  <h3>A Learner-Focused Journey into Production RAG Systems</h3>
-  <p>Learn to build modern AI systems from the ground up through hands-on implementation</p>
-  <p>Master the most in-demand AI engineering skills: <strong>RAG (Retrieval-Augmented Generation)</strong></p>
-</div>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.12+-blue.svg" alt="Python Version">
-  <img src="https://img.shields.io/badge/FastAPI-0.115+-green.svg" alt="FastAPI">
-  <img src="https://img.shields.io/badge/OpenSearch-2.19-orange.svg" alt="OpenSearch">
-  <img src="https://img.shields.io/badge/Docker-Compose-blue.svg" alt="Docker">
-  <img src="https://img.shields.io/badge/Status-Week%207%20Advanced%20Features-brightgreen.svg" alt="Status">
-</p>
-
-</br>
-
-<p align="center">
-  <a href="#-about-this-course">
-    <img src="static/mother_of_ai_project_rag_architecture.gif" alt="RAG Architecture" width="700">
-  </a>
-</p>
-
-## 📖 About This Course
-
-This is a **learner-focused project** where you'll build a complete research assistant system that automatically fetches academic papers, understands their content, and answers your research questions using advanced RAG techniques.
-
-**The arXiv Paper Curator** will teach you to build a **production-grade RAG system using industry best practices**. Unlike tutorials that jump straight to vector search, we follow the **professional path**: master keyword search foundations first, then enhance with vectors for hybrid retrieval.
-
-> **🎯 The Professional Difference:** We build RAG systems the way successful companies do - solid search foundations enhanced with AI, not AI-first approaches that ignore search fundamentals.
-
-By the end of this course, you'll have your own AI research assistant and the deep technical skills to build production RAG systems for any domain.
-
-### **🎓 What You'll Build**
-
-- **Week 1:** Complete infrastructure with Docker, FastAPI, PostgreSQL, OpenSearch, and Airflow
-- **Week 2:** Automated data pipeline fetching and parsing academic papers from arXiv  
-- **Week 3:** Production BM25 keyword search with filtering and relevance scoring
-- **Week 4:** Intelligent chunking + hybrid search combining keywords with semantic understanding
-- **Week 5:** Complete RAG pipeline with local LLM, streaming responses, and Gradio interface
-- **Week 6:** Production monitoring with Langfuse tracing and Redis caching for optimized performance
-- **Week 7:** **Agentic RAG with LangGraph and Telegram Bot for mobile access**
-
----
-
-## 🏗️ System Architecture Evolution
-
-### Week 7: Agentic RAG & Telegram Bot Integration
-<div align="center">
-  <img src="static/week7_telegram_and_agentic_ai.png" alt="Week 7 Telegram and Agentic AI Architecture" width="800">
-  <p><em>Complete Week 7 architecture showing Telegram bot integration with the agentic RAG system</em></p>
-</div>
-
-### LangGraph Agentic RAG Workflow
-<div align="center">
-  <img src="static/langgraph-mermaid.png" alt="LangGraph Agentic RAG Flow" width="800">
-  <p><em>Detailed LangGraph workflow showing decision nodes, document grading, and adaptive retrieval</em></p>
-</div>
-
-
-**Week 7 Code walkthrough + blog:** [Agentic RAG with LangGraph and Telegram](https://jamwithai.substack.com/p/agentic-rag-with-langgraph-and-telegram) 
-
-**Key Innovations in Week 7:**
-- **Intelligent Decision-Making**: Agents evaluate and adapt retrieval strategies
-- **Document Grading**: Automatic relevance assessment with semantic evaluation
-- **Query Rewriting**: Adaptive query refinement when results are insufficient
-- **Guardrails**: Out-of-domain detection prevents hallucination
-- **Mobile Access**: Telegram bot for conversational AI on any device
-- **Transparency**: Full reasoning step tracking for debugging and trust
-
----
-
-## 🚀 Quick Start
-
-### **📋 Prerequisites**
-- **Docker Desktop** (with Docker Compose)  
-- **Python 3.12+**
-- **UV Package Manager** ([Install Guide](https://docs.astral.sh/uv/getting-started/installation/))
-- **8GB+ RAM** and **20GB+ free disk space**
-
-### **⚡ Get Started**
-
-```bash
-# 1. Clone and setup
-git clone <repository-url>
-cd arxiv-paper-curator
-
-# 2. Configure environment (IMPORTANT!)
-cp .env.example .env
-# The .env file contains all necessary configuration for OpenSearch, 
-# arXiv API, and service connections. Defaults work out of the box.
-# You need to add Jina embeddings free api key and langfuse keys (check the blogs)
-
-# 3. Install dependencies
-uv sync
-
-# 4. Start all services
-docker compose up --build -d
-
-# 5. Verify everything works
-curl http://localhost:8000/health
-```
-
-### **📚 Weekly Learning Path**
-
-| Week | Topic | Blog Post | Code Release |
-|------|-------|-----------|--------------|
-| **Week 0** | The Mother of AI project - 6 phases | [The Mother of AI project](https://jamwithai.substack.com/p/the-mother-of-ai-project) | - |
-| **Week 1** | Infrastructure Foundation | [The Infrastructure That Powers RAG Systems](https://jamwithai.substack.com/p/the-infrastructure-that-powers-rag) | [week1.0](https://github.com/jamwithai/arxiv-paper-curator/releases/tag/week1.0) |
-| **Week 2** | Data Ingestion Pipeline | [Building Data Ingestion Pipelines for RAG](https://jamwithai.substack.com/p/bringing-your-rag-system-to-life) | [week2.0](https://github.com/jamwithai/arxiv-paper-curator/releases/tag/week2.0) |
-| **Week 3** | OpenSearch ingestion & BM25 retrieval | [The Search Foundation Every RAG System Needs](https://jamwithai.substack.com/p/the-search-foundation-every-rag-system) | [week3.0](https://github.com/jamwithai/arxiv-paper-curator/releases/tag/week3.0) |
-| **Week 4** | **Chunking & Hybrid Search** | [The Chunking Strategy That Makes Hybrid Search Work](https://jamwithai.substack.com/p/chunking-strategies-and-hybrid-rag) | [week4.0](https://github.com/jamwithai/arxiv-paper-curator/releases/tag/week4.0) |
-| **Week 5** | **Complete RAG system** | [The Complete RAG System](https://jamwithai.substack.com/p/the-complete-rag-system) | [week5.0](https://github.com/jamwithai/arxiv-paper-curator/releases/tag/week5.0) |
-| **Week 6** | **Production monitoring & caching** | [Production-ready RAG: Monitoring & Caching](https://jamwithai.substack.com/p/production-ready-rag-monitoring-and) | [week6.0](https://github.com/jamwithai/arxiv-paper-curator/releases/tag/week6.0) |
-| **Week 7** | **Agentic RAG & Telegram Bot** | [Agentic RAG with LangGraph and Telegram](https://jamwithai.substack.com/p/agentic-rag-with-langgraph-and-telegram) | [week7.0](https://github.com/jamwithai/arxiv-paper-curator/releases/tag/week7.0) |
-
-**📥 Clone a specific week's release:**
-```bash
-# Clone a specific week's code
-git clone --branch <WEEK_TAG> https://github.com/jamwithai/arxiv-paper-curator
-cd arxiv-paper-curator
-uv sync
-docker compose down -v
-docker compose up --build -d
-
-# Replace <WEEK_TAG> with: week1.0, week2.0, etc.
-```
-
-### **📊 Access Your Services**
-
-| Service | URL | Purpose |
-|---------|-----|---------|
-| **API Documentation** | http://localhost:8000/docs | Interactive API testing |
-| **Gradio RAG Interface** | http://localhost:7861 | User-friendly chat interface |
-| **Langfuse Dashboard** | http://localhost:3000 | RAG pipeline monitoring & tracing |
-| **Airflow Dashboard** | http://localhost:8080 | Workflow management |
-| **OpenSearch Dashboards** | http://localhost:5601 | Hybrid search engine UI |
-
-#### **NOTE**: Check airflow/simple_auth_manager_passwords.json.generated for Airflow username and password
----
-
-## 📚 Week 1: Infrastructure Foundation ✅
-
-**Start here!** Master the infrastructure that powers modern RAG systems.
-
-### **🎯 Learning Objectives**
-- Complete infrastructure setup with Docker Compose
-- FastAPI development with automatic documentation and health checks
-- PostgreSQL database configuration and management
-- OpenSearch hybrid search engine setup
-- Ollama local LLM service configuration
-- Service orchestration and health monitoring
-- Professional development environment with code quality tools
-
-### **🏗️ Architecture Overview**
-
-<p align="center">
-  <img src="static/week1_infra_setup.png" alt="Week 1 Infrastructure Setup" width="800">
-</p>
-
-**Infrastructure Components:**
-- **FastAPI**: REST endpoints with async support (Port 8000)  
-- **PostgreSQL 16**: Paper metadata storage (Port 5432)
-- **OpenSearch 2.19**: Search engine with dashboards (Ports 9200, 5601)
-- **Apache Airflow 3.0**: Workflow orchestration (Port 8080)
-- **Ollama**: Local LLM server (Port 11434)
-
-### **📓 Setup Guide**
-
-```bash
-# Launch the Week 1 notebook
-uv run jupyter notebook notebooks/week1/week1_setup.ipynb
-```
-
-**Completion Guide:** Follow the [Week 1 notebook](notebooks/week1/week1_setup.ipynb) for hands-on setup and verification steps.
-
-### **📖 Deep Dive**
-**Blog Post:** [The Infrastructure That Powers RAG Systems](https://jamwithai.substack.com/p/the-infrastructure-that-powers-rag) - Detailed walkthrough and production insights
-
----
-
-## 📚 Week 2: Data Ingestion Pipeline ✅
-
-**Building on Week 1 infrastructure:** Learn to fetch, process, and store academic papers automatically.
-
-### **🎯 Learning Objectives**
-- arXiv API integration with rate limiting and retry logic
-- Scientific PDF parsing using Docling
-- Automated data ingestion pipelines with Apache Airflow
-- Metadata extraction and storage workflows
-- Complete paper processing from API to database
-
-### **🏗️ Architecture Overview**
-
-<p align="center">
-  <img src="static/week2_data_ingestion_flow.png" alt="Week 2 Data Ingestion Architecture" width="800">
-</p>
-
-**Data Pipeline Components:**
-- **MetadataFetcher**: 🎯 Main orchestrator coordinating the entire pipeline
-- **ArxivClient**: Rate-limited paper fetching with retry logic
-- **PDFParserService**: Docling-powered scientific document processing  
-- **Airflow DAGs**: Automated daily paper ingestion workflows
-- **PostgreSQL Storage**: Structured paper metadata and content
-
-### **📓 Implementation Guide**
-
-```bash
-# Launch the Week 2 notebook  
-uv run jupyter notebook notebooks/week2/week2_arxiv_integration.ipynb
-```
-
-**Completion Guide:** Follow the [Week 2 notebook](notebooks/week2/week2_arxiv_integration.ipynb) for hands-on implementation and verification steps.
-
-### **📖 Deep Dive**
-**Blog Post:** [Building Data Ingestion Pipelines for RAG](https://jamwithai.substack.com/p/bringing-your-rag-system-to-life) - arXiv API integration and PDF processing
-
----
-
-## 📚 Week 3: Keyword Search First - The Critical Foundation
-
-**Building on Weeks 1-2 foundation:** Implement the keyword search foundation that professional RAG systems rely on.
-
-### **🎯 Learning Objectives**
-- Why keyword search is essential for RAG systems (foundation first approach)
-- OpenSearch index management, mappings, and search optimization
-- BM25 algorithm and the math behind effective keyword search
-- Query DSL for building complex search queries with filters and boosting
-- Search analytics for measuring relevance and performance
-- Production patterns used by real companies
-
-### **🏗️ Architecture Overview**
-
-<p align="center">
-  <img src="static/week3_opensearch_flow.png" alt="Week 3 OpenSearch Flow Architecture" width="800">
-</p>
-
-**Search Infrastructure Components:**
-- **OpenSearch Service**: `src/services/opensearch/` - Professional search service implementation
-- **Search API**: `src/routers/search.py` - Search API endpoints with BM25 scoring
-- **Learning Materials**: `notebooks/week3/` - Complete OpenSearch integration guide
-- **Quality Metrics**: Precision, recall, and relevance scoring
-
-### **📓 Setup Guide**
-
-```bash
-# Launch the Week 3 notebook
-uv run jupyter notebook notebooks/week3/week3_opensearch.ipynb
-```
-
-**Completion Guide:** Follow the [Week 3 notebook](notebooks/week3/week3_opensearch.ipynb) for hands-on OpenSearch setup and BM25 search implementation.
-
-### **📖 Deep Dive**
-**Blog Post:** [The Search Foundation Every RAG System Needs](https://jamwithai.substack.com/p/the-search-foundation-every-rag-system) - Complete BM25 implementation with OpenSearch
-
----
-
-## 📚 Week 4: Chunking & Hybrid Search - The Semantic Layer
-
-**Building on Week 3 foundation:** Add the semantic layer that makes search truly intelligent.
-
-### **🎯 Learning Objectives**
-- Section-based chunking with intelligent document segmentation
-- Production embeddings with Jina AI integration and fallback strategies
-- Hybrid search mastery using RRF fusion for keyword + semantic retrieval
-- Unified API design with single endpoint supporting multiple search modes
-- Performance analysis and trade-offs between search approaches
-
-### **🏗️ Architecture Overview**
-
-<p align="center">
-  <img src="static/week4_hybrid_opensearch.png" alt="Week 4 Hybrid Search Architecture" width="800">
-</p>
-
-**Hybrid Search Infrastructure Components:**
-- **Text Chunker**: `src/services/indexing/text_chunker.py` - Section-aware chunking with overlap strategies
-- **Embeddings Service**: `src/services/embeddings/` - Production embedding pipeline with Jina AI
-- **Hybrid Search API**: `src/routers/hybrid_search.py` - Unified search API supporting all modes
-- **Learning Materials**: `notebooks/week4/` - Complete hybrid search implementation guide
-
-### **📓 Setup Guide**
-
-```bash
-# Launch the Week 4 notebook
-uv run jupyter notebook notebooks/week4/week4_hybrid_search.ipynb
-```
-
-**Completion Guide:** Follow the [Week 4 notebook](notebooks/week4/week4_hybrid_search.ipynb) for hands-on implementation and verification steps.
-
-### **📖 Deep Dive**
-**Blog Post:** [The Chunking Strategy That Makes Hybrid Search Work](https://jamwithai.substack.com/p/chunking-strategies-and-hybrid-rag) - Production chunking and RRF fusion implementation
-
----
-
-## 📚 Week 5: Complete RAG Pipeline with LLM Integration
-
-**Building on Week 4 hybrid search:** Add the LLM layer that turns search into intelligent conversation.
-
-### **🎯 Learning Objectives**
-- Local LLM integration with Ollama for complete data privacy
-- Performance optimization with 80% prompt reduction (6x speed improvement)
-- Streaming implementation using Server-Sent Events for real-time responses
-- Dual API design with standard and streaming endpoints
-- Interactive Gradio interface with advanced parameter controls
-
-### **🏗️ Architecture Overview**
-
-<p align="center">
-  <img src="static/week5_complete_rag.png" alt="Week 5 Complete RAG System Architecture" width="900">
-</p>
-
-**Complete RAG Infrastructure Components:**
-- **RAG Endpoints**: `src/routers/ask.py` - Dual endpoints (`/api/v1/ask` + `/api/v1/stream`)
-- **Ollama Service**: `src/services/ollama/` - LLM client with optimized prompts
-- **System Prompt**: `src/services/ollama/prompts/rag_system.txt` - Optimized for academic papers
-- **Gradio Interface**: `src/gradio_app.py` - Interactive web UI with streaming support
-- **Launcher Script**: `gradio_launcher.py` - Easy-launch script (runs on port 7861)
-
-### **📓 Setup Guide**
-
-```bash
-# Launch the Week 5 notebook
-uv run jupyter notebook notebooks/week5/week5_complete_rag_system.ipynb
-
-# Launch Gradio interface
-uv run python gradio_launcher.py
-# Open http://localhost:7861
-```
-
-**Completion Guide:** Follow the [Week 5 notebook](notebooks/week5/week5_complete_rag_system.ipynb) for hands-on LLM integration and RAG pipeline implementation.
-
-### **📖 Deep Dive**
-**Blog Post:** [The Complete RAG System](https://jamwithai.substack.com/p/the-complete-rag-system) - Complete RAG system with local LLM integration and optimization techniques
-
----
-
-## 📚 Week 6: Production Monitoring and Caching
-
-**Building on Week 5 complete RAG system:** Add observability, performance optimization, and production-grade monitoring.
-
-### **🎯 Learning Objectives**
-- Langfuse integration for end-to-end RAG pipeline tracing
-- Redis caching strategy with intelligent cache keys and TTL management
-- Performance monitoring with real-time dashboards for latency and costs
-- Production patterns for observability and optimization
-- Cost analysis and LLM usage optimization (150-400x speedup with caching)
-
-### **🏗️ Architecture Overview**
-
-<p align="center">
-  <img src="static/week6_monitoring_and_caching.png" alt="Week 6 Monitoring & Caching Architecture" width="900">
-</p>
-
-**Production Infrastructure Components:**
-- **Langfuse Service**: `src/services/langfuse/` - Complete tracing integration with RAG-specific metrics
-- **Cache Service**: `src/services/cache/` - Redis client with exact-match caching and graceful fallback
-- **Updated Endpoints**: `src/routers/ask.py` - Integrated tracing and caching middleware
-- **Docker Config**: `docker-compose.yml` - Added Redis service and Langfuse local instance
-- **Learning Materials**: `notebooks/week6/` - Complete monitoring and caching implementation guide
-
-### **📓 Setup Guide**
-
-```bash
-# Launch the Week 6 notebook
-uv run jupyter notebook notebooks/week6/week6_cache_testing.ipynb
-```
-
-**Completion Guide:** Follow the [Week 6 notebook](notebooks/week6/week6_cache_testing.ipynb) for hands-on Langfuse tracing and Redis caching implementation.
-
-### **📖 Deep Dive**
-**Blog Post:** [Production-ready RAG: Monitoring & Caching](https://jamwithai.substack.com/p/production-ready-rag-monitoring-and) - Production-ready RAG with monitoring and caching
-
----
-
-## 📚 Week 7: Agentic RAG with LangGraph and Telegram Bot
-
-**Building on Week 6 production system:** Add intelligent reasoning, multi-step decision-making, and Telegram bot integration for mobile-first AI interactions.
-
-### **🎯 Learning Objectives**
-- LangGraph workflows for state-based agent orchestration with decision nodes
-- Guardrail implementation for query validation and domain boundary detection
-- Document grading with semantic relevance evaluation
-- Query rewriting for automatic query refinement and better retrieval
-- Adaptive retrieval with multi-attempt retrieval and intelligent fallback
-- Telegram bot integration with async operations and error handling
-- Reasoning transparency by exposing agent decision-making process
-
-### **🏗️ Architecture Overview**
-
-<p align="center">
-  <img src="static/week7_telegram_and_agentic_ai.png" alt="Week 7 Agentic RAG & Telegram Architecture" width="900">
-</p>
-
-**Agentic RAG Infrastructure Components:**
-- **Agent Nodes**: `src/services/agents/nodes/` - Guardrail, retrieve, grade, rewrite, and generate nodes
-- **Workflow Orchestration**: `src/services/agents/agentic_rag.py` - LangGraph workflow coordination
-- **Telegram Bot**: `src/services/telegram/` - Command handlers and message processing
-- **Agentic Endpoint**: `src/routers/agentic_ask.py` - Agentic RAG API endpoint
-- **Learning Materials**: `notebooks/week7/` - Week 7 learning materials and examples
-
-### **📓 Setup Guide**
-
-```bash
-# Launch the Week 7 notebook
-uv run jupyter notebook notebooks/week7/week7_agentic_rag.ipynb
-```
-
-**Completion Guide:** Follow the [Week 7 notebook](notebooks/week7/week7_agentic_rag.ipynb) for hands-on LangGraph agentic RAG and Telegram bot implementation.
-
-### **📖 Deep Dive**
-**Blog Post:** [Agentic RAG with LangGraph and Telegram](https://jamwithai.substack.com/p/agentic-rag-with-langgraph-and-telegram) - Building intelligent agents with decision-making, adaptive retrieval, and mobile access
-
----
-
-## ⚙️ Configuration
-
-**Setup:**
-```bash
-cp .env.example .env
-# Edit .env for your environment
-```
-
-**Key Variables:**
-- `JINA_API_KEY` - Required for Week 4+ (hybrid search with embeddings)
-- `TELEGRAM__BOT_TOKEN` - Required for Week 7 (Telegram bot integration)
-- `LANGFUSE__PUBLIC_KEY` & `LANGFUSE__SECRET_KEY` - Optional for Week 6 (monitoring)
-
-**Complete Configuration:** See [.env.example](.env.example) for all available options and detailed documentation.
-
----
-
-## 🔧 Reference & Development Guide
-
-### **🛠️ Technology Stack**
-
-| Service | Purpose | Status |
-|---------|---------|--------|
-| **FastAPI** | REST API with automatic docs | ✅ Ready |
-| **PostgreSQL 16** | Paper metadata and content storage | ✅ Ready |
-| **OpenSearch 2.19** | Hybrid search engine (BM25 + Vector) | ✅ Ready |
-| **Apache Airflow 3.0** | Workflow automation | ✅ Ready |
-| **Jina AI** | Embedding generation (Week 4) | ✅ Ready |
-| **Ollama** | Local LLM serving (Week 5) | ✅ Ready |
-| **Redis** | High-performance caching (Week 6) | ✅ Ready |
-| **Langfuse** | RAG pipeline observability (Week 6) | ✅ Ready |
-
-**Development Tools:** UV, Ruff, MyPy, Pytest, Docker Compose
-
-### **🏗️ Project Structure**
-
-```
-arxiv-paper-curator/
-├── src/                    # Main application code
-│   ├── routers/            # API endpoints (search, ask, papers)
-│   ├── services/           # Business logic (opensearch, ollama, agents, cache)
-│   ├── models/             # Database models (SQLAlchemy)
-│   ├── schemas/            # Pydantic validation schemas
-│   └── config.py           # Environment configuration
-├── notebooks/              # Weekly learning materials (week1-7)
-├── airflow/                # Workflow orchestration (DAGs)
-├── tests/                  # Test suite
-└── compose.yml             # Docker service orchestration
-```
-
-### **📡 API Endpoints Reference**
-
-| Endpoint | Method | Description | Week |
-|----------|--------|-------------|------|
-| `/health` | GET | Service health check | Week 1 |
-| `/api/v1/papers` | GET | List stored papers | Week 2 |
-| `/api/v1/papers/{id}` | GET | Get specific paper | Week 2 |
-| `/api/v1/search` | POST | BM25 keyword search | Week 3 |
-| `/api/v1/hybrid-search/` | POST | Hybrid search (BM25 + Vector) | **Week 4** |
-
-**API Documentation:** Visit http://localhost:8000/docs for interactive API explorer
-
-### **🔧 Essential Commands**
-
-#### **Using the Makefile** (Recommended)
-```bash
-# View all available commands
-make help
-
-# Quick workflow
-make start         # Start all services
-make health        # Check all services health
-make test          # Run tests
-make stop          # Stop services
-```
-
-#### **All Available Commands**
-| Command | Description |
-|---------|-------------|
-| `make start` | Start all services |
-| `make stop` | Stop all services |
-| `make restart` | Restart all services |
-| `make status` | Show service status |
-| `make logs` | Show service logs |
-| `make health` | Check all services health |
-| `make setup` | Install Python dependencies |
-| `make format` | Format code |
-| `make lint` | Lint and type check |
-| `make test` | Run tests |
-| `make test-cov` | Run tests with coverage |
-| `make clean` | Clean up everything |
-
-#### **Direct Commands** (Alternative)
-```bash
-# If you prefer using commands directly
-docker compose up --build -d    # Start services
-docker compose ps               # Check status
-docker compose logs            # View logs
-uv run pytest                 # Run tests
-```
-
-### **🎓 Target Audience**
-| Who | Why |
-|-----|-----|
-| **AI/ML Engineers** | Learn production RAG architecture beyond tutorials |
-| **Software Engineers** | Build end-to-end AI applications with best practices |
-| **Data Scientists** | Implement production AI systems using modern tools |
-
----
-
-## 🛠️ Troubleshooting
-
-**Common Issues:**
-- **Services not starting?** Wait 2-3 minutes, check `docker compose logs`
-- **Port conflicts?** Stop other services using ports 8000, 8080, 5432, 9200
-- **Memory issues?** Increase Docker Desktop memory allocation
-
-**Get Help:**
-- Check the comprehensive Week 1 notebook troubleshooting section
-- Review service logs: `docker compose logs [service-name]`
-- Complete reset: `docker compose down --volumes && docker compose up --build -d`
-
----
-
-## 💰 Cost Structure
-
-**This course is completely free!** You'll only need minimal costs for optional services:
-- **Local Development:** $0 (everything runs locally)
-- **Optional Cloud APIs:** ~$2-5 for external LLM services (if chosen)
-
----
-
-<div align="center">
-  <h3>🎉 Ready to Start Your AI Engineering Journey?</h3>
-  <p><strong>Begin with the Week 1 setup notebook and build your first production RAG system!</strong></p>
-  
-  <p><em>For learners who want to master modern AI engineering</em></p>
-  <p><strong>Built with love by Jam With AI</strong></p>
-</div>
-
----
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
+## Week 1 Notes
+
+### Video 2 - Understanding the Architecture & Project Structure
+
+
+:::spoiler Detailed
+
+### Project Overview and Problem Statement
+
+- **Problem Solving Focus**: The project aims to create a meaningful, production-like system rather than a toy project. It mimics real-world systems in companies, focusing on staying updated with the latest AI research papers.
+- **Use Case**: Build a local RAG (Retrieval-Augmented Generation) system to query academic papers from arXiv. For example, querying "what is attention mechanism?" retrieves relevant chunks from papers like "Attention Is All You Need" (2017) and generates answers based on them.
+- **Data Source**: arXiv archive, which publishes 80-100+ AI papers daily. Used for managers/companies to ensure developments align with the latest global knowledge, avoiding outdated or SEO-biased Google search results.
+- **Advantages Over LLMs**: Latest LLMs may lack access to very recent papers; this system ensures up-to-date, source-specific information.
+
+### Data Ingestion Pipeline
+
+- **arXiv API**: Public API for fetching papers, but rate-limited (cool down of 3 seconds between concurrent downloads to avoid rejection).
+- **Orchestration Tool**: Apache Airflow used for scheduling and logging. Triggers daily (e.g., 10 AM) to fetch papers, handle failures via UI logs. Alternatives: Metaflow, Dagster, AWS Lambda.
+- **ETL Pipeline**: Represents real-world data engineering pipelines for keeping RAG databases updated (daily or every 5 minutes for critical cases). Ignored in many courses but essential for production.
+- **PDF Processing**:
+  - Download PDFs via API.
+  - Extract text using **OCR (Optical Character Recognition)** mechanisms.
+  - Primary: **Docling** (chosen for ease and effectiveness after testing).
+  - Alternative: **Grobid** (specific to academic papers).
+  - Fallback Mechanism: Planned but simplified to Docling for output consistency. In production, multiple fallbacks ensure pipeline reliability.
+- **Chunking Strategies**: Experiment with strategies (e.g., paragraph-based vs. section-based) to break text into manageable pieces for storage and retrieval.
+- **Observability**: Error handling, logging, and monitoring to fix issues quickly.
+
+### Storage and Database Architecture
+
+- **Intermediate Storage**: PostgreSQL used as a middle layer to store metadata and extracted text from papers (e.g., last 3-4 months). Avoids re-downloading/re-processing if chunking strategy changes.
+- **Vector Database**: OpenSearch for storing chunks, metadata, and embeddings.
+  - Why OpenSearch: Supports **hybrid search** (keyword + vector retrieval), built on Elasticsearch (long-standing search engine for e-commerce like Amazon).
+  - **Keyword Retrieval**: Ensures exact terms (e.g., in medical fields) are matched, avoiding misses from pure embedding-based similarity.
+  - **Vector Retrieval**: Uses embeddings for semantic similarity (e.g., cosine similarity, HNSW - Hierarchical Navigable Small World graphs).
+  - Customization: Supports sorting (e.g., by publication date), pre/post-filtering, low latency, distributed setup.
+  - Alternatives: Qdrant, Pinecone, Weaviate (selection based on cost, maintenance, latency, cloud support; researched 30+ databases).
+  - Considerations: Must support multiple retrieval methods (e.g., FAISS - Facebook AI Similarity Search) and scale for 5-10 years.
+
+### Retrieval Pipeline
+
+- **Hybrid Search**: Combines **BM25** (keyword search benchmark, fast for exact matches) with vector embeddings from user queries.
+- **Embeddings**: Query converted to embeddings for similarity search (e.g., cosine similarity or HNSW).
+- **Top-K Retrieval**: Selects top matching documents/chunks.
+- **Advanced Techniques** (not implemented here but mentioned):
+  - **Re-ranking**: Compute-intensive; fine-tunes models (e.g., Cohere's re-rankers) on own data to ensure top results are most relevant. Covered in future series.
+  - Alternatives to Vector: Classification-based retrieval or simplest methods if use case allows.
+- **Objective**: Provide the best context for user queries efficiently, not assuming vector as default.
+
+### API and Frontend
+
+- **API Layer**: FastAPI (Python-based, supports async for I/O-bound tasks, faster performance). Reflects production over Jupyter notebooks (good for experiments but not deployment).
+- **Frontend Interface**: Gradio (popular for quick UX; alternatives: Streamlit). User enters query, gets response.
+- **Query Flow**:
+  - User query → FastAPI → Retrieval (embeddings + hybrid search) → LLM with prompt template (includes retrieved chunks) → Response back to frontend.
+- **Async Mechanism**: Improves speed for input/output operations.
+
+### LLM Integration and Observability
+
+- **LLM Role**: Uses retrieved chunks in a prompt template to generate answers. Local setup (e.g., Ollama with Llama 3.2, context window ~100K tokens).
+- **Tokenization**: Only relevant for context window limits (truncate if exceeding). No daily token caps like cloud services (e.g., AWS Bedrock's 1M-100M token limits).
+- **Observability Tool**: Langfuse for monitoring queries, retrievals, and LLM performance (e.g., what query was asked, how retrieval performed).
+- **Logging**: Info, debug, error levels. In production: Push to cloud log management, use tools like DataDog for analysis, PagerDuty for alerts to responsible personnel.
+- **Guardrails**: Not implemented here but planned for future (examine query before processing; reject/absurd queries get generic responses).
+
+### Additional Concepts and Best Practices
+
+- **Production Reflections**: System designed to mirror real-world (e.g., ETL for updates, fallbacks, hybrid retrieval, observability). Emphasizes research in tool selection (e.g., databases).
+- **Extensibility**: Future additions like summarizing latest papers (via sorting), fine-tuning for ranking (not LLM generation), guardrails.
+- **Fine-Tuning Clarification**: For ranking/re-ranking objectives, not general LLM tasks (different from next-word prediction or classification).
+- **Alternatives Emphasized**: Not locked to specific tools (e.g., Airflow → others; Docling → Grobid; OpenSearch → Qdrant). Focus on understanding why choices are made.
+
+These notes cover the transcript's key points, with technical terms bolded for emphasis. Review sections sequentially to understand the end-to-end architecture.
+
+:::
+
+::: spoiler Detailed Self
+- Importnat thing is to undersant the data source
+- Always look for new data
+- Atention mechanicim
+- Rate Limi
+- setup cron job -- metaflow, dagster but logs are important.
+- ETL pipeline, step function. rag database up to date, airlfow orchestration tool fetch, parse pdf, ocr, grobid,
+- alwasy setup fallback mechnicsum- 2 OCR method, consistency, mulitpel fall back mechanisum based ont he criticality of step.
+- chuncks, metatdata -- Update the chuncking stratergy. Use the data from db copy
+- opensearch why ..? vector and keyword reterival. Hybrid approch. Sorting very easy on query.
+- qudrant, pinecone, weweate ??
+- db useful for the next atleast next 5. may be10 years, latency, distrubutes, pre filter, post filtering. HNSW, various reterival method.
+- client interface, where user can enter the query like gradio or streamlit.
+- fast api at production not juypter. input output format
+- bm25 keyword search mechanisum.
+- Rag can have mulitple mechnicsum/steps to find the best maching. kohere reranking model on your data
+- always this to find the simplest way to find the document
+- langfuse llm layer observable 
+- pager duty tools
+- guardrails- not pass abusurd query to llm
+:::
+
+
+### Video 3 Infrastructure Walkthrough
+
+:::spoiler Self
+- Good Folder/Project structure
+- compose.yml what cloud would have we have in local
+- variables to Specific to airlfow or to software variables.
+- UV enviroment managment unsing rust very fast
+- RUFF, myPy, pytest, unit test,, integeration test
+- pydantic, sql alembic migration script
+
+:::
+
+## Week 2 Notes
+
+:::spoiler Introduction to Data pipeline & ingestion in RAG + QnA 1
+- Almost every LLM has RAG.
+- Understand use case and extract the data from the proper source identification.May be data from 2,3 sources or website or api
+- Dummy question in jupyter and test code
+- evalutaion data set, possible user question and there answer
+- 4/5 chunking stratergy, compare response.
+- Handle if data is not there to answer
+- Enrich user query- fix spell- add more keywords enhance, trigger multiple query, again and again with differnt query to make sure if we can find the answer or not. if it can not find, in agetnic system we have writer agent or system push the
+- pipeline data engineer role -- we have to coordinate with them
+- Ai enginner talk to data engineer. AI enginer starts with basic data scrape and move to data ennginner team
+- DBT pipeline/ Dagster
+- Latency incerease if the context window is too long/big, more infor than 
+- Latency and Halluciantion 
+- pipeline standard -- data validation, num-- range, automate using gpt to check the qualitty of data
+- Case by case.. if every data data is changing-- no standard way--
+- Small POC with chunking and data scraping
+- 
+
+:::
+
+:::spoiler Data Ingestion walk through
+- Airflow better picture - many companies are using it
+- Define schedule, see log of each step
+- Fetch only meta data
+- Llama Index end to end, llama parser -- replace for dockline
+- test 10-15 solution, longivity, reliablity,
+- some add to much abstraction- balance with
+- Automate as much as we can-- not things happening 1 to 4
+- convert table to markdown and then chunk, llm able to porcess better
+- create table summary and enrich the embeding
+- give llm table and summary
+- we messed up something and go back to the backfilling or middle layer
+- maintain consistenccy if we have different sources
+- concurrency level depends on resource- on cloud pay when machine is on
+- Not every
+- 
+
+
+:::
+
+:::spoiler Part 2 QnA
+- How do we deal with new data source ?
+    - Strong product team, make sure all the data source is listed
+    - Maintain a new piple for new datasource. Data source may be available at different time
+    - PreProcessing will be differnt/ all data source has differnt metadata
+- Tabular data as text or image, which embeding to choose ?
+    - KolePali
+
+- Why would we use database migration. Zero downtime
+    - Create copy of index and migrate the index. And use new index to retrive the data
+    - Very Manual for vector
+    - new metadata gets added we need for filtering
+    - Embeding vector dimsion get changed 700 to 500. for which we need to add a new field
+
+- Storing data in vector db. Heavy over the network. Pointer in vector or actual data in nosql.
+    - it'll add addional call may add network latency. if we dont have any latncey we can just store all the data in vector db
+    - Both ways are fine.
+- Entire abstact in 1 column. how do we chunck ?
+    - sections
+    - chuking more like feature engineering. there are various startergy. but choose what make sense to  you. use varios like by paragraph  or by heading or by sction or by new chapter. start with simplest and check the quality of answere. balance between the latency, simpliciy and quality o the answere given by llm. we cn be creative depending on the use case.
+    - if we go by the subsection, we make sure we inclde some context from the section as well
+-  Agent is reponsible for the creating sql query based on User query.
+    -  Handle most frequent query first
+
+
+
+:::
+
+# Week 3
+
+:::spoiler
+- If we can solve by keyword is good and then move to vector
+- Big Miss, Never Jump to vector skipping the keword search
+- Old School algo
+    - TF
+    - ID-TF
+    - BM25
+
+- To fetch old data
+    - docker exec -it rag-airflow airflow dags backfill arxiv_paper_ingestion --start-date 2024-01-10 --end-date 2024-01-122
+
+- Open search, understand schema, type of field, and there advantages, keyword search, text search.
+- we can preporcess, make it lowercase, store data as token, pizza, eat, shantnu etc,-- eating to eat.
+- he is eating pizza-- one word/token, for each field we can define certain prepossing, lke store synonym.
+- We can setup analyzers, preprossing of data or pre processing of data. We can do preporcess by search engine, we dont need to do much preprocessing by our self in most case before storing to seachengine db.
+- we can control scoring of keywords in search query
+- we can also search by fuzziness - In case of type 2 chars here and there will also give result
+- Possibilty is infinity the way we want to search. We can add filters in data
+
+- Search api using fast api will build search query in opensearch query format = same as openserach query console - Opensearch dependecny injection
+
+- we can't manintain synonyms, fine control keyword search
+- Sometimes if we have billions of document Vrctor search might be better, we dont do brute search, HNSW like other machine learning algorithm
+
+#### QNA
+- Multilang, Vector search shine, if embeding handle multilingual
+- Chat gpt follow up question, just enrich the prompt to ask follow up question
+- 2 set of filtering, we add before query without user knowing. ask user to which filter need to aplly, we recommend filters to user.
+- IN real world mostly strt with vector search Rag, easy to use no brainer. Hybrid Rag an then we have graph RAG.
+- Complex reterivla needs complex RAG.
+- Agentic RAG is the Solution to all. 
+- Moer Hype Things to sell various RAG or Vector Db- Companies look for simpler solution, not fancy solution
+:::
