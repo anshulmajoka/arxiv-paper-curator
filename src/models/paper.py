@@ -5,7 +5,7 @@ from sqlalchemy import JSON, Boolean, Column, DateTime, String, Text
 from sqlalchemy.dialects.postgresql import UUID
 from src.db.interfaces.postgresql import Base
 
-
+#Inheriting from Base turns a regular Python class into a database model.
 class Paper(Base):
     __tablename__ = "papers"
 
